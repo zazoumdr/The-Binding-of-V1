@@ -19,17 +19,17 @@ namespace ULTRAKILLBepInExTemplate
         /// <summary>
         /// Make sure the modGUID is unique and is not used by any other mods!
         /// </summary>
-        private const string modGUID = "modAuthor.modName";
+        private const string modGUID = "killi.TheBindingOfV1";
 
         /// <summary>
         /// Make sure this is the same modName as the modGUID (without modAuthor)
         /// </summary>
-        private const string modName = "modName";
+        private const string modName = "TheBindingOfV1";
 
         /// <summary>
         /// Self explainitory.
         /// </summary>
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "0.1.0";
 
         private static readonly Harmony Harmony = new Harmony(modGUID);
 

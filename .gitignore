@@ -97,3 +97,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+
+# BepInEx mod - DLL references (game files, do not commit)
+*.dll
+lib/
+
+# Build output
+bin/
+obj/

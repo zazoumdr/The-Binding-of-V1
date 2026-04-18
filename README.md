@@ -1,39 +1,71 @@
-﻿# ULTRAKILL MODDING TEMPLATE
-Created by "thebluenebula" and made possible with the help of BepInEx.
-# How to Setup The Template
-- First of all, install the template and move it to "[LocalUserFolder]\Documents
-- Navigate to the folder of your version of Visual Studio you would to use the template in. (Visual Studio 20XX)
-- Find the "My Exported Templates" folder and open it.
-- Paste the previously obtained .zip there.
-- When opening Visual Studio, you will find the template as a project template.
+﻿The Binding of V1
+A roguelike mod for ULTRAKILL. Run through handcrafted rooms, collect bizarre items dropped by defeated enemies, and spend your hard-earned souls at the shop between floors. Your combat style directly impacts your economy — the more stylish your kills, the more souls you earn.
 
-# How to Setup References
-**MANDATORY**
-- Install ULTRAKILL with BepInEx.
-- Right click the "lib" folder and then click "Add Existing Item" from the dropdown.
-- Change the filter mode to "All Files" in the new pop-up.
-- Navigate to ULTRAKILL's root.
+Status: Early development — not yet playable
 
-**FOR SETTING UP THE LIB FOLDER (BEPINEX)**
-- Find "BepInEx.dll" and "0Harmony.dll" in "BepInEx/Core".
-- Select both by holding CTRL and then click Add.
 
-**FOR SETTING UP THE LIB FOLDER (ULTRAKILL)**
-Depending on what your mod is and what it does, some .dll files may not be needed. You will have to experiment with what .dll(s) you need. **However some .DLL(s) are mandatory so do not skip this step.**
-- Navigate to "ULTRAKILL_Data/Managed".
-- Select "Assembly-CSharp.dll" and "UnityEngine.dll" **(MANDATORY)**
-- From there, select any other .DLL(s) that are/is needed for your mod.
+Requirements
 
-**FOR SETTING UP THE REFERENCES**
-- Right click the template and click "Copy Full Path" from the dropdown. (Optional)
-- Right click "References" in the project and select "Add Reference..." from the dropdown.
-- Click on "Browse" on the new pop-up.
-- Navigate to the project's "lib" folder. (If you copied the project path earlier, go there.)
-- Select all ".dll" files inside of the lib folder by hitting CTRL + A.
-- Click Add on the pop-up.
-- Click Ok on the "Reference Manager" window.
+ULTRAKILL (Steam)
+r2modman
+Visual Studio 2022+ with .NET desktop development workload
+Unity 2019.4.40f1 (for map editing only)
 
-# RECOMMENDED PROGRAMS
-- [dnSpyEx](https://github.com/dnSpyEx) is a continuation of dnSpy which allows you to view .NET dlls. Useful for looking at ULTRAKILL's code for modding.
-- [Spite](https://discord.com/invite/envy-spite-1227272001719111750) is a level editor that allows you to look at how ULTRAKILL levels are made and create bundle files for mods. (Rude can also be used as an alternative.)
 
+Setting up the project
+1. Clone the repo
+bashgit clone https://github.com/killi/The-Biding-of-V1.git
+2. Install required mods via r2modman
+Create a profile for ULTRAKILL and install :
+
+BepInExPack
+AngryLevelLoader
+PluginConfigurator
+
+3. Set up the lib/ folder
+Create a lib/ folder at the root of the project and copy the following files into it :
+FileLocationBepInEx.dll[r2modman profile]\BepInEx\core\0Harmony.dll[r2modman profile]\BepInEx\core\Assembly-CSharp.dll[ULTRAKILL install]\ULTRAKILL_Data\Managed\UnityEngine.dll[ULTRAKILL install]\ULTRAKILL_Data\Managed\
+
+These files are excluded from version control (.gitignore). Every contributor must supply their own copies.
+
+Finding your r2modman profile folder :
+Open r2modman → select your ULTRAKILL profile → Browse profile folder in the left menu.
+Finding your ULTRAKILL install folder :
+Steam → right click ULTRAKILL → Manage → Browse local files
+4. Add references in Visual Studio
+
+Right click References in the Solution Explorer
+Add Reference → Browse
+Navigate to the lib/ folder
+Select all .dll files → Add → OK
+
+5. Build the project
+Ctrl+Shift+B or Build → Build Solution
+The compiled .dll will be in bin/Debug/.
+
+Testing in game
+
+Copy bin/Debug/TheBindingOfV1.dll to your r2modman profile's BepInEx/plugins/ folder
+Launch ULTRAKILL via r2modman (Start modded)
+The BepInEx console should show :
+
+Mod TheBindingOfV1 version 0.1.0 is loading...
+Mod TheBindingOfV1 version 0.1.0 is loaded!
+
+Project structure
+The-Biding-of-V1/
+├── Plugin.cs          ← main plugin entry point
+├── Properties/
+│   └── AssemblyInfo.cs
+├── lib/               ← DLL references (gitignored, fill manually)
+└── bin/               ← build output (gitignored)
+
+Contributing
+
+Join the UltraModding Discord for modding help
+Join the Envy & Spite Discord for map editing help
+Check the conception doc and item list for design reference
+
+
+License
+MIT

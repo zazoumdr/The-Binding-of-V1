@@ -174,5 +174,22 @@
     "effet": "???",
     "notes_dev": "À définir.",
     "auteur_note": null
+  },
+  {
+    "id": "le_pointeur_laser",
+    "nom": "Le pointeur laser",
+    "description": "Attention au yeux !",
+    "effet": "crée un raycast qui quand pointé sur un enemy pas trop gros le stun 1.5 s",
+    "notes_dev": "mettre un cooldown sur chaque enemy lors d'un stun (genre 10s)",
+    "auteur_note": null
+  },
+  {
+    "id": "poche_trouee",
+    "nom": "Poche Trouée",
+    "description": "Appeller plombier pour poche, j'ai une fuite d'argent !",
+    "effet": "Fais spawn de temps en temps un piece proche de V1 (celle du revolver vert)",
+    "notes_dev": "La piece spawn au sol, elle est projetée vers le haut, elle doit toujours spawn dans le champ de vision de V1, il faudra le bruit iconique de la piece aussi",
+    "auteur_note": null
   }
+  
 ]

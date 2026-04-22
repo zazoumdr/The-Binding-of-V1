@@ -1,0 +1,20 @@
+public enum BSType
+{
+	head,
+	limb,
+	body,
+	small,
+	smallest,
+	splatter,
+	underwater,
+	sand,
+	blessing,
+	brainChunk,
+	skullChunk,
+	eyeball,
+	jawChunk,
+	gib,
+	chestExplosion,
+	dontpool,
+	unknown
+}
